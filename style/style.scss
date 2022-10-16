@@ -1,0 +1,51 @@
+.to-do-list {
+  display: block;
+  h1 {
+    margin-left: 200px;
+  }
+  #myinput {
+    height: 30px;
+    width: 50%;
+    font-size: 16px;
+    margin-left: 15%;
+  }
+  .add-button {
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    height: 35px;
+    font-size: 16px;
+    width: 5%;
+    padding: 3px;
+    background-color: blue;
+    color: white;
+    border-color: blue;
+    &:hover {
+      background-color: #bbb;
+      border-color: #bbb;
+    }
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  li {
+    cursor: pointer;
+    list-style: none;
+    border: solid #bbb 1px;
+    width: 50%;
+
+    margin-left: 160px;
+
+    position: relative;
+    padding: 12px 8px 12px 40px;
+
+    font-size: 18px;
+    transition: 0.2s;
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
