@@ -19,10 +19,17 @@ const testData = [
   },
 ];
 
-const addTasksToList = () => {
+const data = {
+  description: "Pull out buttplug to quick",
+  done: false,
+};
+
+postItemToApi(data);
+
+const addTasksToList = (tasks) => {
   const taskListElement = document.querySelector(".todo-list");
 
-  testData.map((task) => {
+  tasks.map((task) => {
     const listElement = document.createElement("li");
 
     listElement.classList.add("todo-list-item");
@@ -33,4 +40,6 @@ const addTasksToList = () => {
   });
 };
 
-addTasksToList();
+getItemsFromApi().then((data) => {
+  addTasksToList(data);
+});
