@@ -1,45 +1,56 @@
-const testData = [
-  {
-    description: "Get milk",
-    done: false,
-    _id: "6e027411-3c48-48ea-84af-0c2011f81f8c",
-    _createdOn: "2022-10-18T11:52:03.974Z",
-  },
-  {
-    description: "Take kids out of school",
-    done: false,
-    _id: "6e027411-3c48-48ea-84af-0c2311f81f8c",
-    _createdOn: "2022-10-18T11:52:03.974Z",
-  },
-  {
-    description: "Read a book",
-    done: false,
-    _id: "6e027411-3c48-48ea-84af-0c7811f81f8c",
-    _createdOn: "2022-10-18T11:52:03.974Z",
-  },
-];
+const todoInput = document.querySelector("#todo-input"); //input
+const todoInputButton = document.querySelector(".todo-add-button"); //button
+const todoList = document.querySelector(".todo-list"); //ul
 
-const data = {
-  description: "Pull out buttplug to quick",
-  done: false,
-};
+// deleteItemFromApi(id);
 
-postItemToApi(data);
+const addTaskToList = (task) => {
+  const listElement = document.createElement("li");
 
-const addTasksToList = (tasks) => {
-  const taskListElement = document.querySelector(".todo-list");
+  listElement.classList.add("todo-list-item");
 
-  tasks.map((task) => {
-    const listElement = document.createElement("li");
+  listElement.appendChild(document.createTextNode(task.description));
 
-    listElement.classList.add("todo-list-item");
-
-    listElement.appendChild(document.createTextNode(task.description));
-
-    taskListElement.appendChild(listElement);
-  });
+  todoList.appendChild(listElement);
 };
 
 getItemsFromApi().then((data) => {
-  addTasksToList(data);
+  data.map((task) => {
+    addTaskToList(task);
+  });
+});
+
+//When clicking the add button, task will be added to ul
+
+//
+todoInputButton.addEventListener("click", () => {
+  const data = {
+    description: todoInput.value,
+    done: false,
+  };
+
+  postItemToApi(data).then((response) => {
+    addTaskToList(response);
+  });
+
+  todoInput.value = "";
+});
+
+//remove task from list
+const removeTasksFromList = (tasks) => {
+  const taskListElement = document.querySelector(".todo-list");
+
+  tasks.map((task) => {
+    const listElement = document.removeElement("li");
+
+    listElement.classList.remove("todo-list-item");
+
+    listElement.removeChild(document.createTextNode(task.description));
+
+    taskListElement.removeChild(listElement);
+  });
+};
+
+getItemsFromApi().then((dats) => {
+  removeTasksFromList(data);
 });
