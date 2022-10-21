@@ -14,7 +14,7 @@ const removeTaskFromList = (id) => {
 const addTaskToList = (task) => {
   const listElement = document.createElement("li");
 
-  listElement.classList.add("todo-list-item");
+  listElement.classList.add("row", "todo-list-item");
   listElement.setAttribute("id", `todo-${task._id}`);
 
   listElement.appendChild(document.createTextNode(task.description));

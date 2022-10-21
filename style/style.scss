@@ -1,51 +1,74 @@
-.todo-input-container {
+.todo-container {
+  margin: 50px auto;
   display: block;
-  h1 {
-    margin-left: 200px;
+  width: 80%;
+
+  .todo-input-container {
+    display: block;
+
+    #todo-input {
+      height: 30px;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .todo-add-button {
+      cursor: pointer;
+      border-radius: 5px;
+      padding: 5px 10px;
+      height: 35px;
+      font-size: 16px;
+      background-color: orange;
+      color: white;
+      border-color: orange;
+      &:hover {
+        background-color: #bbb;
+        border-color: #bbb;
+      }
+    }
   }
-  #todo-input {
-    height: 30px;
-    width: 50%;
-    font-size: 16px;
-    margin-left: 200px;
-  }
-  .todo-add-button {
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 10px;
-    height: 35px;
-    font-size: 16px;
-    width: 5%;
-    padding: 3px;
-    background-color: orange;
-    color: white;
-    border-color: orange;
-    &:hover {
-      background-color: #bbb;
-      border-color: #bbb;
+
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 40px;
+    padding: 0;
+
+    .todo-list-item {
+      list-style: none;
+      border: solid #bbb 1px;
+      padding: 12px 8px 12px 40px;
+
+      cursor: pointer;
+
+      font-size: 18px;
+
+      transition: 0.2s;
+      &:hover {
+        background-color: #ddd;
+      }
+
+      button {
+        padding: 5px;
+
+        i {
+          width: 20px;
+          height: 20px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
   }
 }
 
-ul {
+.row {
   display: flex;
-  flex-direction: column;
-  margin-top: 40px;
-  li {
-    cursor: pointer;
-    list-style: none;
-    border: solid #bbb 1px;
-    width: 50%;
-
-    margin-left: 160px;
-
-    position: relative;
-    padding: 12px 8px 12px 40px;
-
-    font-size: 18px;
-    transition: 0.2s;
-    &:hover {
-      background-color: #ddd;
-    }
-  }
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }

@@ -1,48 +1,62 @@
-.todo-input-container {
+.todo-container {
+  margin: 50px auto;
+  display: block;
+  width: 80%;
+}
+.todo-container .todo-input-container {
   display: block;
 }
-.todo-input-container h1 {
-  margin-left: 200px;
-}
-.todo-input-container #todo-input {
+.todo-container .todo-input-container #todo-input {
   height: 30px;
-  width: 50%;
+  width: 100%;
   font-size: 16px;
-  margin-left: 200px;
 }
-.todo-input-container .todo-add-button {
+.todo-container .todo-input-container .todo-add-button {
   cursor: pointer;
   border-radius: 5px;
-  margin-left: 10px;
+  padding: 5px 10px;
   height: 35px;
   font-size: 16px;
-  width: 5%;
-  padding: 3px;
   background-color: orange;
   color: white;
   border-color: orange;
 }
-.todo-input-container .todo-add-button:hover {
+.todo-container .todo-input-container .todo-add-button:hover {
   background-color: #bbb;
   border-color: #bbb;
 }
-
-ul {
+.todo-container .todo-list {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
+  padding: 0;
 }
-ul li {
-  cursor: pointer;
+.todo-container .todo-list .todo-list-item {
   list-style: none;
   border: solid #bbb 1px;
-  width: 50%;
-  margin-left: 160px;
-  position: relative;
   padding: 12px 8px 12px 40px;
+  cursor: pointer;
   font-size: 18px;
   transition: 0.2s;
 }
-ul li:hover {
+.todo-container .todo-list .todo-list-item:hover {
   background-color: #ddd;
+}
+.todo-container .todo-list .todo-list-item button {
+  padding: 5px;
+}
+.todo-container .todo-list .todo-list-item button i {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }/*# sourceMappingURL=style.css.map */
