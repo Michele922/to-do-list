@@ -23,14 +23,14 @@ const postItemToApi = async (data) => {
 };
 
 // Delete an item from API
-const deleteItemFromApi = async (data) => {
+const deleteItemFromApi = async (id) => {
   const response = await fetch("http://localhost:3000/", {
     method: "DELETE",
-    body: JSON.stringify(data),
+    body: Text(id),
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "Text/html",
     },
   });
 
-  return response.json();
+  return response.text();
 };

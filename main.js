@@ -1,8 +1,9 @@
+//const
 const todoInput = document.querySelector("#todo-input"); //input
 const todoInputButton = document.querySelector(".todo-add-button"); //button
 const todoList = document.querySelector(".todo-list"); //ul
 
-// deleteItemFromApi(id);
+//queryselector
 
 const addTaskToList = (task) => {
   const listElement = document.createElement("li");
@@ -10,6 +11,14 @@ const addTaskToList = (task) => {
   listElement.classList.add("todo-list-item");
 
   listElement.appendChild(document.createTextNode(task.description));
+
+  const deleteButton = document.createElement("button");
+  deleteButton.innerHTML = "<i class='fa-sharp fa-solid fa-xmark'></i>";
+  //  deleteButton.addEventListener("click", () =>{
+  //    const data
+  //  })
+
+  listElement.appendChild(deleteButton);
 
   todoList.appendChild(listElement);
 };
@@ -22,7 +31,6 @@ getItemsFromApi().then((data) => {
 
 //When clicking the add button, task will be added to ul
 
-//
 todoInputButton.addEventListener("click", () => {
   const data = {
     description: todoInput.value,
@@ -36,8 +44,13 @@ todoInputButton.addEventListener("click", () => {
   todoInput.value = "";
 });
 
-//remove task from list
-const removeTasksFromList = (tasks) => {
+//add close button to li
+const listElement = document.createElement("li");
+listElement.querySelector;
+
+// deleteItemFromApi(id);
+
+const removeTasksFromList = (data) => {
   const taskListElement = document.querySelector(".todo-list");
 
   tasks.map((task) => {
