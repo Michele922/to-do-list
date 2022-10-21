@@ -24,12 +24,8 @@ const postItemToApi = async (data) => {
 
 // Delete an item from API
 const deleteItemFromApi = async (id) => {
-  const response = await fetch("http://localhost:3000/", {
+  const response = await fetch(`http://localhost:3000/${id}`, {
     method: "DELETE",
-    body: Text(id),
-    headers: {
-      "Content-Type": "Text/html",
-    },
   });
 
   return response.text();
